@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1><br>
+    Aumentos <input type="number" id="aumento">
+    <button onclick="calcular();">Calcular</button>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var sueldo= parseInt(document.getElementById('aumento').value);
+        var aumento= 0;
+
+        if(sueldo > 1000000){
+            aumento=sueldo + 50000;
+        }
+        if(sueldo <800000){
+            aumento=sueldo + 80000;
+        }
+        alert('el sueldo es ' + sueldo);
+    }
+</script>
