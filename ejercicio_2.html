@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="css/ejercicio2.css">
+    <title>Ejercicio N° 2</title>
 </head>
 <body>
-    <h1>Ejercicio 2</h1><br>
-    Aumentos <input type="number" id="aumento">
-    <button onclick="calcular();">Calcular</button>
+    <nav>
+        <ul class="lista">
+            <li class="menu"><a href="ejercicio_1.html"> Ejercicio N° 1</a></li>
+            <li class="menu"><a href="ejercicio_2.html"> Ejercicio N° 2</a></li>
+            <li class="menu"><a href="ejercicio_3.html"> Ejercicio N° 3</a></li>
+            <li class="menu"><a href="ejercicio_4.html"> Ejercicio N° 4</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <h1>Ejercicio N° 2</h1><br>
+    <legend>Registre la información</legend><br>
+    <form action="registrar-info.php"><br>
+        Aumentos de trabajadores <input type="number" id="aumento"><br><br>
+        <button onclick="calcular();">Calcular</button><br><br>
+    </form>
 </body>
 </html>
 
@@ -17,13 +31,22 @@
     function calcular(){
         var sueldo= parseInt(document.getElementById('aumento').value);
         var aumento= 0;
+        var nuevo_sueldo=0;
 
-        if(sueldo > 1000000){
-            aumento=sueldo + 50000;
+        if(sueldo >= 1000000){
+            aumento=sueldo*0.05;
         }
-        if(sueldo <800000){
-            aumento=sueldo + 80000;
+
+        if(sueldo <= 800000){
+            aumento=sueldo*0.10;
         }
-        alert('el sueldo es ' + sueldo);
+
+        nuevo_sueldo=sueldo+aumento;
+
+        // if(sueldo <800000){
+        //     aumento=0.10+sueldo;
+        //     // aumento=sueldo + 80000;
+        // }
+        alert('El sueldo es: ' + nuevo_sueldo);
     }
 </script>

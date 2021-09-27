@@ -8,10 +8,22 @@
     <title>Ejercicio N° 1</title>
 </head>
 <body>
-    <h1>Ejercicio 1</h1><br>
+    <nav>
+        <ul class="lista">
+            <li class="menu"><a href="ejercicio_1.html"> Ejercicio N° 1</a></li>
+            <li class="menu"><a href="ejercicio_2.html"> Ejercicio N° 2</a></li>
+            <li class="menu"><a href="ejercicio_3.html"> Ejercicio N° 3</a></li>
+            <li class="menu"><a href="ejercicio_4.html"> Ejercicio N° 4</a></li>
+        </ul>
+    </nav>
 
-    Horas en la semana<input type="number" id="hora">
-    <button onclick="calcular_sueldo();">Calcular sueldo</button>
+    <br>
+    <h1>Ejercicio N° 1</h1><br>
+    <legend>Registre la información</legend><br>
+    <form action="registrar-info.php"><br>
+            Horas en la semana <input type="number" id="hora"><br><br>
+            <button onclick="calcular_sueldo();">Calcular sueldo</button><br><br>
+    </form>
 </body>
 </html>
 
@@ -30,7 +42,7 @@
            hora_extra= hora_trabajadas - 40;
            sueldo= (hora_extra * 15000) + (40*10000)
        }
-       alert('El sueldo en total es' + sueldo)
+       alert('El sueldo en total es ' + sueldo)
     }
     
 </script>

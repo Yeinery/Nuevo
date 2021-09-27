@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ejercicio4.css">
+    <title>Ejercicio N° 4</title>
+</head>
+<body> 
+    <nav>
+        <ul class="lista">
+            <li class="menu"><a href="ejercicio_1.html"> Ejercicio N° 1</a></li>
+            <li class="menu"><a href="ejercicio_2.html"> Ejercicio N° 2</a></li>
+            <li class="menu"><a href="ejercicio_3.html"> Ejercicio N° 3</a></li>
+            <li class="menu"><a href="ejercicio_4.html"> Ejercicio N° 4</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <h1>Ejercicio N° 4</h1><br>
+    <legend>Registre la información</legend><br>
+    <form action="registrar-info.php"><br>
+        Número uno <input type="number" id="uno"><br><br>
+        Número dos <input type="number" id="dos"><br><br>
+        Número tres <input type="number" id="tres"><br><br>
+        <button onclick="calcular();">Calcular</button> <br> <br>
+
+        <p id="promedio"></p>
+        <p id="mayor"></p>
+        <p id="menor"></p>
+        <p id="par"></p>
+        <p id="impar"></p>
+        <br><br>
+  </form>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var uno=  document.getElementById('uno').value;
+        var dos=  document.getElementById('dos').value;
+        var tres= document.getElementById('tres').value;
+        var p = (parseFloat(uno)+parseFloat(dos)+parseFloat(tres))/3; 
+        document.getElementById('promedio').innerHTML = 'El promedio es '+p; 
+
+
+        var uno=parseInt(document.getElementById('uno').value);
+        var dos=parseInt(document.getElementById('dos').value);
+        var tres=parseInt(document.getElementById('tres').value);
+
+        if(uno>dos && uno>tres){
+            document.getElementById('mayor').innerHTML= 'El número ' + uno + ' es el mayor' ;
+        }
+        if(dos>uno && dos>tres){
+            document.getElementById('mayor').innerHTML= 'El número ' + dos + ' es el mayor' ;
+        }
+        if(tres>uno && tres>dos){
+            document.getElementById('mayor').innerHTML= 'El número ' +  tres  + ' es el mayor' ;
+        }
+
+
+        if(uno<dos && uno<tres){
+            document.getElementById('menor').innerHTML= 'El número ' + uno + ' es el menor' ;
+        }
+        if(dos<uno && dos<tres){
+            document.getElementById('menor').innerHTML= 'El número ' + dos + ' es el menor' ;
+        }
+        if(tres<uno && tres<dos){
+            document.getElementById('menor').innerHTML= 'El número ' + tres + ' es el menor' ;
+        }
+
+
+        if(uno % 2 == 0){
+            document.getElementById('par').innerHTML='El número ' + uno + ' es par'; 
+        }
+        else{
+            document.getElementById('impar').innerHTML='El número ' + uno + ' es impar';
+        }
+        if(dos % 2 == 0){
+            document.getElementById('par').innerHTML='El número ' + dos + ' es par'; 
+        }
+        else{
+            document.getElementById('impar').innerHTML='El número ' + dos + ' es impar';
+        }
+        if(tres % 2 == 0){
+            document.getElementById('par').innerHTML='El número ' + tres + ' es par'; 
+        }
+        else{
+            document.getElementById('impar').innerHTML='El número ' + tres + ' es impar';
+        }
+    }
+</script>
