@@ -8,7 +8,7 @@ h1{
 body{
     background-color: rgb(209, 205, 205);
 }
-form{
+.container{
     border: black 2px solid;
     width: 35%;
     text-align: center;
