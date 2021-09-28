@@ -1,6 +1,8 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 body{
-    margin-top: 5%;
-    font: 80px arial,helvetica,sans-serif;
     font-size: 50px;
 }
 table{
@@ -34,7 +36,6 @@ table{
     border: 8px outset rgb(109, 108, 108);
 }
 input{
-    margin-top: 5%;
     width: 370px;
     height: 80px;
     border: 15px solid;
@@ -44,4 +45,23 @@ input{
 }
 button{
     padding: 10px;
+}
+ul{
+    text-align: right;
+    background: rgb(112, 108, 108);
+    padding: 5px;
+    list-style: none;
+    width: 99.2%;
+}
+.menu{
+    list-style: none;
+    display: inline;
+    padding: 13px;
+    border-left: 2px solid black;
+    font-size: 0.4em;
+}
+a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
 }
