@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pagimana_main.css">
+    <title>Formulario Web</title>
+</head>
+<body>
+    <h1>Registrar un Producto</h1><br>
+    <div class="contenedor"><br>
+        <p>Código IP </p><input type="text" id="codigo" placeholder="Digite el código IP"><br><br>
+        <p>Nombre del Producto </p><input type="text" id="Nombre_producto" placeholder="Digite el nombre del Producto"><br><br>
+        <p>Descripción </p><input type="text" id="descripcion" placeholder="Descripción"><br><br>
+        <p>Imagen </p><input type="text" id="imagen" placeholder="Inserte la imagen"><br><br>
+        <p>Stock </p><input type="text" id="stock" placeholder="Stock del producto"><br><br>
+        <!-- <p>Estado </p><input type="text" id="estado" placeholder="Estado del producto"><br><br> -->
+        <p>Estado</p>
+        <input class="controls-check" type="radio" name="IPS" value="IPS Centro" id="estado">IPS Centro<br>
+     
+        <p>Reserva </p><input type="text" id="reserva" placeholder="Reserva del producto"><br><br>
+        <p>Valor </p><input type="text" id="valor" placeholder="Valor del producto"><br><br>
+
+        <button type="button" onclick="registrar_producto();">Registrar Producto</button>
+        <br><br>
+    </div>
+
+    <br><br>
+
+    <table>
+        <th>Código IP</th>
+        <th>Nombre del Producto</th>
+        <th>Descripción</th>
+        <th>Imagen</th>
+        <th>Stock</th>
+        <th>Estado</th>
+        <th>Reserva</th>
+        <th>Valor</th>
+     
+        <tbody id="tabla">
+
+        </tbody>
+    </table>
+
+
+</body>
+</html>
+
+<script>
+    var producto=[];
+
+    function registrar_producto(){
+        var codigo= document.getElementById('codigo').value;
+        var Nombre_producto= document.getElementById('Nombre_producto').value;
+        var descripcion= document.getElementById('descripcion').value;
+        var imagen= document.getElementById('imagen').value;
+        var stock= document.getElementById('stock').value;
+        var estado= document.getElementById('estado').value;
+        var reserva= document.getElementById('reserva').value;
+        var valor= document.getElementById('valor').value;
+
+        producto.push({codigo,Nombre_producto,descripcion,imagen, stock, estado, reserva, valor});
+        alert("Se registró el producto "+ Nombre_producto);
+        listar_productos();
+        
+    }
+
+    function listar_productos(){
+
+        var datos=""
+
+        for(var i=0; i<producto.length; i++){
+            datos+="</tr><td>"+producto[i].codigo+ "</td>";
+            datos+="<td>"+producto[i].Nombre_producto+ "</td>";
+            datos+="<td>"+producto[i].descripcion+ "</td>";
+            datos+="<td>"+producto[i].imagen+ "</td>";
+            datos+="<td>"+producto[i].stock+ "</td>";
+            datos+="<td>"+producto[i].estado+ "</td>";
+            datos+="<td>"+producto[i].reserva+ "</td>";
+            datos+="<td>"+producto[i].valor+ "</td>";
+
+            datos+="</tr>";
+        }
+        
+        document.getElementById('tabla').innerHTML=datos;
+    }
+
+    
+
+</script>

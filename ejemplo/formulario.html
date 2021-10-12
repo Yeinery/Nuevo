@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    Nombre:<input type="text" id="Nombre" placeholder="Digite el nombre"><br>
+    Nota 1:<input type="text" id="Nota1" placeholder="Digite la nota 1"><br>
+    Nota 2:<input type="text" id="Nota2" placeholder="Digite la nota 2"><br>
+    Nota 3:<input type="text" id="Nota3" placeholder="Digite la nota 3"><br><br>
+    <button type="button" onclick="registrar_nota();">Registrar</button>
+
+    <br>
+    <table>
+        <th>Nombre</th>
+        <th>Nota1</th>
+        <th>Nota2</th>
+        <th>Nota3</th>
+        <th>Definitiva</th>
+        <th>Estado</th>
+        <tbody id="tabla">
+
+        </tbody>
+    </table>
+
+
+</body>
+</html>
+
+<script>
+    var personas=[];
+
+    function registrar_nota(){
+        var Nombre= document.getElementById('Nombre').value;
+        var Nota1= document.getElementById('Nota1').value;
+        var Nota2= document.getElementById('Nota2').value;
+        var Nota3= document.getElementById('Nota3').value;
+
+        personas.push({Nombre,Nota1,Nota2,Nota3});
+        alert("Se registró la nota de "+ Nombre);
+        listar_notas();
+        
+    }
+
+    function listar_notas(){
+
+        var datos=""
+        var definitiva=""
+        var estado=""
+
+        for(var i=0; i<personas.length; i++){
+            datos+="<tr><td>"+personas[i].Nombre+ "</td>";
+            datos+="<td>"+personas[i].Nota1+ "</td>";
+            datos+="<td>"+personas[i].Nota2+ "</td>";
+            datos+="<td>"+personas[i].Nota3+ "</td>";
+            datos+="<td>"+(parseFloat(personas[i].Nota1) + parseFloat(personas[i].Nota2) + parseFloat(personas[i].Nota3))/3+ "</td>";
+            datos+="<td>"+definitiva+"</td>";
+
+            if(definitiva<2.69){
+                datos+= "<td>"+ "Perdió"+ "</td>";
+            }
+            if(definitiva>=3){
+                datos+= "<td>"+ "Habilita"+ "</td>";
+            }
+
+            datos+="</tr>";
+
+        }
+        document.getElementById('tabla').innerHTML=datos;
+    }
+
+    
+
+</script>

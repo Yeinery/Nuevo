@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ejercicio3.css">
+    <title>Ejercicio N° 3</title>
+</head>
+<body>
+    <nav>
+        <ul class="lista">
+            <li class="menu"><a href="ejercicio_1.html"> Ejercicio N° 1</a></li>
+            <li class="menu"><a href="ejercicio_2.html"> Ejercicio N° 2</a></li>
+            <li class="menu"><a href="ejercicio_3.html"> Ejercicio N° 3</a></li>
+            <li class="menu"><a href="ejercicio_4.html"> Ejercicio N° 4</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <h1>Ejercicio N° 3</h1><br>
+    <legend>Registre la información</legend><br>
+    <div class="container">
+    <br>
+        Primer Parcial: <input type="number" id="t1">
+        <br><br>
+        Segundo Parcial: <input type="number" id="t2">
+        <br><br>
+        Tercer Parcial: <input type="number" id="t3">
+        <br><br>
+        Exámen Final: <input type="number" id="t4">
+        <br><br>
+        <button onclick="Calcular();">Calcular nota final</button><br><br>
+        
+        <p id="promedio"></p>
+    </div>
+</body>
+</html>
+
+<script> 
+    var vr1=0.20
+    var vr2=0.25
+    var vr3=0.30
+    var vr4=0.25
+
+    function Calcular() { 
+        var vr1 = document.getElementById('t1').value; 
+        var vr2 = document.getElementById('t2').value; 
+        var vr3 = document.getElementById('t3').value; 
+        var vr4 = document.getElementById('t4').value; 
+        var p = (parseFloat(vr1)+parseFloat(vr2)+parseFloat(vr3)+parseFloat(vr4))/4; 
+        document.getElementById('promedio').innerHTML = p; 
+    }
+    </script>

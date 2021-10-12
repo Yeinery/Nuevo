@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ejercicio1.css">
+    <title>Ejercicio N° 1</title>
+</head>
+<body>
+    <nav>
+        <ul class="lista">
+            <li class="menu"><a href="ejercicio_1.html"> Ejercicio N° 1</a></li>
+            <li class="menu"><a href="ejercicio_2.html"> Ejercicio N° 2</a></li>
+            <li class="menu"><a href="ejercicio_3.html"> Ejercicio N° 3</a></li>
+            <li class="menu"><a href="ejercicio_4.html"> Ejercicio N° 4</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <h1>Ejercicio N° 1</h1><br>
+    <legend>Registre la información</legend><br>
+    <div class="container"><br>
+            Horas en la semana <input type="number" id="hora"><br><br>
+            <button onclick="calcular_sueldo();">Calcular sueldo</button><br><br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_sueldo(){
+        var hora_trabajadas= parseInt(document.getElementById('hora').value);
+
+        var sueldo=0;
+        var hora_extra= 0;
+      
+        if(hora_trabajadas < 40){
+            sueldo = hora_trabajadas * 10000;
+        }
+       else{
+           hora_extra= hora_trabajadas - 40;
+           sueldo= (hora_extra * 15000) + (40*10000)
+       }
+       alert('El sueldo en total es ' + sueldo)
+    }
+    
+</script>
